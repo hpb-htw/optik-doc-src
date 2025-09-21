@@ -7,7 +7,7 @@ import geometry;
 import "../optik.asy" as optik;
 
 
-vector normalDir = (1, 2);
+vector normalDir = (0, 1);
 point entry = (0, 0);
 point source = (0, 30);
 
