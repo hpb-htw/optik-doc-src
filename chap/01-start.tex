@@ -7,7 +7,7 @@ Das Paket \optik{} wurde mit dem Ziel, die Erstellung von gängigen optische Dia
 Beispielen in diesem Dokument sind in \repo{} zu finden. 
 Ein Beispiel fängt --wenn nicht anders erwähnt-- mit folgenden Zeilen an:
 
-\begin{verbatim}
+\begin{asycode}
 settings.tex="lualatex";  // input Unicode character directly from keyboard
 settings.outformat="pdf"; // use PDF as default output
 
@@ -17,15 +17,15 @@ unitsize(2mm);                       // justify size / scale of image
 
 import geometry;                     // Optik uses this package.
 import "../optik.asy" as optik;      // the path to the file `optik.asy' must be adjusted.
-\end{verbatim}
+\end{asycode}
 
 
 Der Inhalt der Datei \verb|shortcut.tex| ist wie folgt:
 
-\begin{verbatim}
+\begin{texcode}
 \newcommand{\pLabel}[1]{\mathsf{#1}}
 \newcommand{\tLabel}[1]{\textsf{#1}}
-\end{verbatim}
+\end{texcode}
 
 
 Die beiden obigen Code-Auszüge lassen darauf schließen, 
