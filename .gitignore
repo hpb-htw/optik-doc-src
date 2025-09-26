@@ -2,4 +2,6 @@
 *.synctex.gz
 optik.pdf
 _minted/
+asy/*.tex
+pygmentstyle.sty
 

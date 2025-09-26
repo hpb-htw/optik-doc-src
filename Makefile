@@ -20,8 +20,6 @@ asy := $(wildcard asy/*.asy)
 asy_pdf = $(asy:.asy=.pdf)
 
 
-
-
 all: $(pdf)
 
 
@@ -32,11 +30,15 @@ all: $(pdf)
 	$(LATEX) $(LATEX_OPT) $<
 	latexmk -c $<
 
-optik.tex: *.sty literatur.bib $(asy_pdf) $(chapters)
+optik.tex: *.sty literatur.bib pygmentstyle.sty $(asy_pdf) $(chapters)
 	touch $@
 
 $(asy_pdf): $(asy)
 	make -C asy
+
+
+pygmentstyle.sty:
+	pygmentize -S default -f latex -a full > $@
 
 clean:
 	rm -fv *.aux *.out *.bbl *.blg *.pytxcode *.toc *.loe *.thm *.nav *.bcf *.tdo *.log *.run.xml *.snm *.vrb *.synctex.gz *.fls

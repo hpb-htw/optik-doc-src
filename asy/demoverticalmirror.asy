@@ -1,7 +1,7 @@
 settings.tex="lualatex";
 settings.outformat="pdf";
 
-texpreamble("\input{shortcut.tex}");
+texpreamble("\input{shortcut.sty}");
 
 unitsize(2mm);
 
