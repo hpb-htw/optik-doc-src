@@ -32,7 +32,7 @@ all: $(pdf)
 	$(LATEX) $(LATEX_OPT) $<
 	latexmk -c $<
 
-optik.tex: *.sty literatur.bib $(tikz_pdf) $(chapters)
+optik.tex: *.sty literatur.bib $(asy_pdf) $(chapters)
 	touch $@
 
 $(asy_pdf): $(asy)
