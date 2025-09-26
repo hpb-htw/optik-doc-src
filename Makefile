@@ -16,16 +16,14 @@ pdf := $(tex:.tex=.pdf)
 tikz := $(wildcard tikz/*.tex)
 tikz_pdf = $(tikz:.tex=.pdf)
 
-EXERCISES := exercises
-TIKZ := tikz
+asy := $(wildcard asy/*.asy)
+asy_pdf = $(asy:.asy=.pdf)
 
-#all: $(pdf) $(EXERCISES)
-#	#make -C $(EXERCISES)
+
+
 
 all: $(pdf)
 
-interactive: skript.tex
-	export max_print_line=1024; latexmk -pvc -view=none -pdflua -pdflualatex="lualatex $(LATEX_OPT) %O %S" $<
 
 %.pdf: %.tex
 	$(LATEX) $(LATEX_OPT) $<
@@ -34,11 +32,11 @@ interactive: skript.tex
 	$(LATEX) $(LATEX_OPT) $<
 	latexmk -c $<
 
-skript.tex: *.sty $(tikz_pdf) chap/*.tex
+optik.tex: *.sty literatur.bib $(tikz_pdf) $(chapters)
 	touch $@
 
-$(tikz_pdf): $(tikz)
-	make -C $(TIKZ)
+$(asy_pdf): $(asy)
+	make -C asy
 
 clean:
 	rm -fv *.aux *.out *.bbl *.blg *.pytxcode *.toc *.loe *.thm *.nav *.bcf *.tdo *.log *.run.xml *.snm *.vrb *.synctex.gz *.fls
