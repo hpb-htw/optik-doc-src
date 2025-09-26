@@ -1,11 +1,17 @@
-\documentclass{scrreprt}
+\documentclass[fontsize=10pt,DIV=15]{scrreprt}
 
-\usepackage{fontspec}
-\usepackage{graphicx}
+\input{fontconfig.sty}
+
+\usepackage{biblatex}
+\bibliography{literatur.bib}
 
 \begin{document}
 
-\includegraphics{asy/demo/demomirror.pdf}
 
-\includegraphics{asy/demo/demoverticalmirror.pdf}
+\tableofcontents
+
+\input{chap/01-start.tex}
+
+
+\printbibliography
 \end{document}

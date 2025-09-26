@@ -1,0 +1,39 @@
+\chapter{Allgemeine}
+
+\asypmtote\cite{Asymptote} ist eine Programmiersprache um Graphiken, vor allen aber nicht ausschließlich geometrische Konstruktionen zu erstellen.
+Das Paket \optik{} wurde mit dem Ziel, die Erstellung von gängigen optische Diagramme in der Programmiersprache \asypmtote{} zu erleichtern, geschrieben.
+
+
+Beispielen in diesem Dokument sind in \repo{} zu finden. 
+Ein Beispiel fängt --wenn nicht anders erwähnt-- mit folgenden Zeilen an:
+
+\begin{verbatim}
+settings.tex="lualatex";  // input Unicode character directly from keyboard
+settings.outformat="pdf"; // use PDF as default output
+
+texpreamble("\input{shortcut.tex}"); // optional
+
+unitsize(2mm);                       // justify size / scale of image
+
+import geometry;                     // Optik uses this package.
+import "../optik.asy" as optik;      // the path to the file `optik.asy' must be adjusted.
+\end{verbatim}
+
+
+Der Inhalt der Datei \verb|shortcut.tex| ist wie folgt:
+
+\begin{verbatim}
+\newcommand{\pLabel}[1]{\mathsf{#1}}
+\newcommand{\tLabel}[1]{\textsf{#1}}
+\end{verbatim}
+
+
+Die beiden obigen Code-Auszüge lassen darauf schließen, 
+dass eine funktionierende Installation von \LaTeX{} und \asypmtote{} die notwendige Voraussetzung für die Nutzung des Paket \optik{} ist.
+
+
+\includegraphics{asy/demo/demomirror}
+
+\includegraphics{asy/demo/demoverticalmirror}
+
+
