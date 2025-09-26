@@ -6,7 +6,7 @@ texpreamble("\input{shortcut.tex}");
 unitsize(1mm);
 
 import geometry;
-import "../optik.asy" as optik;
+import "optik/optik.asy" as optik;
 
 
 vector normalDir = (0, 1);

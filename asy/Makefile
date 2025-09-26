@@ -2,7 +2,7 @@
 #exclude := $(wildcard _*.tex)
 #tex := $(wildcard *.tex)
 asy := $(wildcard *.asy)
-libs := ../optik.asy
+libs := optik/optik.asy
 asy := $(filter-out $(libs), $(asy))
 pdf := $(asy:.asy=.pdf)
 

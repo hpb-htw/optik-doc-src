@@ -2,7 +2,7 @@ settings.tex="lualatex";
 settings.outformat="pdf";
 
 import geometry;
-import "../optik.asy" as optik;
+import "optik/optik.asy" as optik;
 
 size(4cm, 0);
 
