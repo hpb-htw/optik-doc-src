@@ -10,8 +10,8 @@ Diese Ebene wird durch einen Normalvektor und einen zentralen Punkt charakterisi
 
 \begin{asycode}
 vector normalDir = (0, 1);
-point centerM = (0, 0);
-PlanaMirror m = PlanaMirror(normalDir, centerM);
+point mirrorC = (0, 0);
+PlanaMirror m = PlanaMirror(normalDir, mirrorC);
 \end{asycode}
 
 Möchte man den Spielgel auf einer Zeichenebene bringen, muss man gestalterische Merkmale feststellen.
@@ -32,8 +32,20 @@ m.setupMirrorSize(leftWidth=25)
 Hier wird der Stärke mit dem Standartwert \texttt{mirrorThickness} gesetzt.
 Man findet den Wert in der Datei \texttt{optik.asy}.
 
+Möchte man den Einfallstrahl aus einer Lichtquelle auf dem zentralen Punkt des Spiegel sowie den entsprechenden reflektierten Strahl zeichnen,
+kann man die Methoden \texttt{drawIncidentRay} und \texttt{drawReflectedRay} benutzen:
+
+\begin{asycode}
+m.drawIncidentRay(source, arrowPosition=0.25)
+ .drawReflectedRay(source, arrowPosition=0.90, rayLength=30); 
+\end{asycode}
+
+Das Argument \texttt{rayLength} lässt den reflektierten Strahl bis zur gegebenen Länge zeichnen, 
+sonst wird der Strahl bis zum Rand der Zeichenebene gezeigt.
+
 Setzt man die obigen Code-Auszüge zusammen, enthält man die folgende Abbildung:
 
-\vexample{asy-img/mirror-blank}
+\hexample{asy-img/mirror-blank}{4.5cm}
 
-Möchte man den Einfallstrahl und den reflektierten Strahl zeichnen, muss man den Einfallpunkt und den Einfallslot berechnen.
+
+

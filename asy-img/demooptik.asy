@@ -1,17 +1,24 @@
 settings.tex="lualatex";
 settings.outformat="pdf";
 
+texpreamble("\input{shortcut.sty}");
+
+unitsize(1mm);
+
 import geometry;
 import "optik/optik.asy" as optik;
 
-size(4cm, 0);
 
-point entry = (0, 0);
-vector direction = (1, 1);
+vector normalDir = (0, 1);
+point mirrorC = (0, 0);
+point source = (-20, 30);
 
-line l = line(entry, entry+direction);
+PlanaMirror m = PlanaMirror(normalDir, mirrorC);
+m.setupMirrorSize(25)
+ .drawMirror()
+ .drawIncidentRay(source, arrowPosition=0.25)
+ .drawReflectedRay(source, arrowPosition=0.90, rayLength=30)
+ .labelMirror(surfaceL="\tLabel{Grenzfläche}", normalL="\tLabel{Einfallslot}")
+ .labelRays(source, "$\alpha$", reflected="$\alpha'$")
+;
 
-dot(entry);
-dot(entry+direction);
-
-draw(l, Arrow(position=0.5));

@@ -3,13 +3,29 @@
 \setdefaultlanguage[spelling=new,variant=german]{german}
 
 \usepackage{graphicx}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins}
+\newlength{\codepadding}
+\setlength{\codepadding}{3mm}
+\newcommand{\hexample}[2]{
+\begin{tcolorbox}[bicolor, sidebyside, sharp corners, sidebyside gap=2\codepadding,%
+  left=\codepadding, right=\codepadding,%
+  colback=green!5,colbacklower=Beige, 
+  boxrule=0pt, lefthand width=#2]
+\includegraphics{#1}
+\tcblower
+\input{#1.tex}
+\end{tcolorbox}
+}
+
 
 \usepackage{minted}
 \usepackage[svgnames]{xcolor}
-\newminted[asycode]{asymptote}{bgcolor=Beige, bgcolorpadding=0.5em}
-\newminted[texcode]{latex}{bgcolor=Beige, bgcolorpadding=0.5em}
-\newminted[shellcode]{bash}{bgcolor=Beige, bgcolorpadding=0.5em}
+\newminted[asycode]{asymptote}{bgcolor=Beige, bgcolorpadding=\codepadding}
+\newminted[texcode]{latex}{bgcolor=Beige, bgcolorpadding=\codepadding}
+\newminted[shellcode]{bash}{bgcolor=Beige, bgcolorpadding=\codepadding}
 
+%\usepackage{dirtree}
 
 \usepackage{hyperref}
 \usepackage{hyperref-patches}
@@ -20,7 +36,4 @@
 \newcommand{\asypmtote}{\texttt{Asymptote}}
 \newcommand{\repo}{\url{https://github.com/hpb-htw/optik-doc/tree/master/asy}}
 
-\newcommand{\vexample}[1]{
-\noindent\includegraphics{#1}\\
-\noindent\input{#1.tex}
-}
+

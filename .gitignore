@@ -2,6 +2,7 @@
 *.synctex.gz
 optik.pdf
 _minted/
+tmp/
 asy/*.tex
 pygmentstyle.sty
 

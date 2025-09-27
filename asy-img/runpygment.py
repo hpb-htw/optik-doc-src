@@ -48,10 +48,11 @@ def pymentize_asy_code(lines:[str], output_filename) -> None:
 if __name__ == "__main__":
     filename = sys.argv[1]
     asy_code_line = read_file(filename)
-    if len(asy_code_line) > 0:
-        tex_output_filename = filename.replace('.asy', '.tex')
-        pymentize_asy_code(asy_code_line, tex_output_filename)
-    else:
+    tex_output_filename = filename.replace('.asy', '.tex')
+    if len(asy_code_line) <= 0:
         print(f"{bcolors.WARNING}    No code from {filename} is extracted {bcolors.ENDC}")
+        print(f"{bcolors.WARNING}    generate empty file `{tex_output_filename}' {bcolors.ENDC}")
+
+    pymentize_asy_code(asy_code_line, tex_output_filename)
 
 

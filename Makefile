@@ -6,6 +6,9 @@ LATEX_OPT := -shell-escape -interaction=nonstopmode -synctex=1 --recorder
 BIBTEX := biber
 BIBTEX_OPT :=
 
+WEB_REPO := optik-doc
+
+MANUAL=optik.pdf
 
 exclude := $(wildcard _*.tex)
 tex := $(wildcard *.tex)
@@ -34,20 +37,30 @@ all: $(pdf)
 optik.tex: *.sty literatur.bib pygmentstyle.sty $(asy_tex) $(asy_pdf) $(chapters)
 	touch $@
 
-$(asy_pdf): $(asy)
+$(asy_pdf) $(asy_tex): $(asy)
 	make -C asy-img
 
-$(asy_tex): $(asy)
-	make -C asy-img
 
 pygmentstyle.sty:
 	pygmentize -S default -f latex -a full > $@
+
+html: asy-img/optik/optik.asy
+	doxygen doxygen.conf
+	rsync -a --delete --progress tmp/html/ $(WEB_REPO) --exclude .git
+
+deploy:
+	make html
+	make $(MANUAL)
+	git -C $(WEB_REPO) add .
+	git -C $(WEB_REPO) commit -a -m "Autocommit"
+	git -C $(WEB_REPO) push --force origin main
+
 
 clean:
 	rm -fv *.aux *.out *.bbl *.blg *.pytxcode *.toc *.loe *.thm *.nav *.bcf *.tdo *.log *.run.xml *.snm *.vrb *.synctex.gz *.fls
 	rm -fv chap/*.aux
 	rm -rfv _minted-*
-	make -C $(EXERCISES) clean
+	
 
 clean-latexmk:
 	rm -rfv *.fdb_latexmk
@@ -56,11 +69,11 @@ clean-latexmk:
 
 clean-target:
 	rm -f *.pdf *.dvi
+	rm -rf tmp
 
 clean-all:
 	make clean
 	make clean-latexmk
-	make clean-target
-	make -C $(EXERCISES) clean-all
+	make clean-target	
 	make -C asy-img clean-all
  

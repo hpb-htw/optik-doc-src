@@ -1,3 +1,6 @@
 [submodule "asy/optik"]
 	path = asy-img/optik
 	url = git@github.com:hpb-htw/optik.git
+[submodule "optik-doc"]
+	path = optik-doc
+	url = git@github.com:hpb-htw/optik-doc.git
