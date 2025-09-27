@@ -14,6 +14,25 @@ git clone --depth 1 https://github.com/hpb-htw/optik.git
 git submodule add --depth 1 https://github.com/hpb-htw/optik.git
 \end{shellcode}
 
+Die Odner-Struktur des \LaTeX{} Projekt kann etwa so aussehen:
+
+\begin{verbatim}
+.
+├── asy-img
+│   ├── Makefile                # optional
+│   ├── mirror-blank.asy        # your images
+│   ├── mirror-complete.asy     # other images
+│   ├── ....                    # ...
+│   ├── optik                   # Clone of {github}/hpb-htw/optik.git
+│   └── shortcut.sty            # common styling for your images
+├── chap
+│   ├── 01-start.tex            # your text in
+│   └── 02-strahlenoptik.tex
+├── main.tex                    # main LaTeX file
+└── Makefile                    # optional
+\end{verbatim}
+
+
 Beispielen in diesem Dokument sind in \repo{} zu finden. 
 Ein Beispiel fängt --wenn nicht anders erwähnt-- mit folgenden Zeilen an:
 
@@ -43,8 +62,8 @@ dass eine funktionierende Installation von \LaTeX{} und \asypmtote{} die notwend
 
 
 
-\includegraphics{asy/mirror-simple}
+\includegraphics{asy-img/mirror-simple}
 %
-\includegraphics{asy/mirror-vertical}
+\includegraphics{asy-img/mirror-vertical}
 
 

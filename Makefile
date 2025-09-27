@@ -16,8 +16,9 @@ pdf := $(tex:.tex=.pdf)
 tikz := $(wildcard tikz/*.tex)
 tikz_pdf = $(tikz:.tex=.pdf)
 
-asy := $(wildcard asy/*.asy)
+asy := $(wildcard asy-img/*.asy)
 asy_pdf = $(asy:.asy=.pdf)
+asy_tex = $(asy:.asy=.tex)
 
 
 all: $(pdf)
@@ -30,12 +31,14 @@ all: $(pdf)
 	$(LATEX) $(LATEX_OPT) $<
 	latexmk -c $<
 
-optik.tex: *.sty literatur.bib pygmentstyle.sty $(asy_pdf) $(chapters)
+optik.tex: *.sty literatur.bib pygmentstyle.sty $(asy_tex) $(asy_pdf) $(chapters)
 	touch $@
 
 $(asy_pdf): $(asy)
-	make -C asy
+	make -C asy-img
 
+$(asy_tex): $(asy)
+	make -C asy-img
 
 pygmentstyle.sty:
 	pygmentize -S default -f latex -a full > $@
@@ -59,5 +62,5 @@ clean-all:
 	make clean-latexmk
 	make clean-target
 	make -C $(EXERCISES) clean-all
-	make -C $(TIKZ) clean-all
+	make -C asy-img clean-all
  
