@@ -72,6 +72,7 @@ clean-target:
 	rm -rf tmp
 
 clean-all:
+	rm pygmentstyle.sty
 	make clean
 	make clean-latexmk
 	make clean-target	
