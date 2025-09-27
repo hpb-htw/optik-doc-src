@@ -6,3 +6,7 @@ tmp/
 asy/*.tex
 pygmentstyle.sty
 
+# Qt creator
+optik-doc-src.*
+.qtc_clangd/
+
