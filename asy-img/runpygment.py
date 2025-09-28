@@ -12,8 +12,8 @@ end_token = r"// </pygmentize>"
 
 class bcolors:
     HEADER = '\033[95m'
-    OKBLUE = '\033[94m'
-    OKCYAN = '\033[96m'
+    OK_BLUE = '\033[94m'
+    OK_CYAN = '\033[96m'
     OKGREEN = '\033[92m'
     WARNING = '\033[93m'
     FAIL = '\033[91m'
@@ -52,6 +52,7 @@ if __name__ == "__main__":
     if len(asy_code_line) <= 0:
         print(f"{bcolors.WARNING}    No code from {filename} is extracted {bcolors.ENDC}")
         print(f"{bcolors.WARNING}    generate empty file `{tex_output_filename}' {bcolors.ENDC}")
+        print(f"{bcolors.OK_CYAN}    Use a pair of {begin_token} and {end_token} to frame the code")
 
     pymentize_asy_code(asy_code_line, tex_output_filename)
 

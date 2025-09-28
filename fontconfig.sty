@@ -8,11 +8,22 @@
 \newlength{\codepadding}
 \setlength{\codepadding}{3mm}
 \newcommand{\hexample}[2]{
-\begin{tcolorbox}[bicolor, sidebyside, sharp corners, sidebyside gap=2\codepadding,%
+\begin{tcolorbox}[title={\texttt{{#1}.asy}},bicolor, sidebyside, sharp corners, sidebyside gap=2\codepadding,%
   left=\codepadding, right=\codepadding,%
   colback=green!5,colbacklower=Beige, 
   boxrule=0pt, lefthand width=#2]
 \includegraphics{#1}
+\tcblower
+\input{#1.tex}
+\end{tcolorbox}
+}
+
+\newcommand{\vexample}[1]{
+\begin{tcolorbox}[title={\texttt{{#1}.asy}},bicolor, sharp corners, sidebyside gap=2\codepadding,%
+  left=\codepadding, right=\codepadding,%
+  colback=green!5,colbacklower=Beige, 
+  boxrule=0pt]
+\centering\includegraphics{#1}
 \tcblower
 \input{#1.tex}
 \end{tcolorbox}
