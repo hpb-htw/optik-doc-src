@@ -17,11 +17,12 @@ point imagePoint = m.imagePoint(source);
 m.setupMirrorSize(10, 12, 8, 0.125mm)
  .drawMirror(withNormal=false) // we don't want to show the default normal line
 ;
-
-real[] incidents = {0, -5, -8};
-
-for(real i : incidents) {
-    NormalLine nl = m.calculateNormal(i);
+real angleStep = 15;
+int steps = 3;
+for(int i = 0; i < steps; ++i) { // rays from three angles: 0, 15 and 30 downward
+    real incidentAngle = i*angleStep;
+    vector iDirection = (1, -Tan(incidentAngle));
+    NormalLine nl = m.calculateNormal(source, iDirection);
     m.drawIncidentRay(source, nl, arrowPosition=0)
      .drawNormal(nl, length=12)
      .drawReflectedRay(source, nl, arrowPosition=1, reflectedRayLength)

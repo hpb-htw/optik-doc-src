@@ -2,9 +2,10 @@
 
 \asypmtote\cite{Asymptote} ist eine Programmiersprache um Graphiken, vor allen aber nicht ausschließlich geometrische Konstruktionen zu erstellen.
 Das Paket \optik{} wurde mit dem Ziel, die Erstellung von gängigen optische Diagramme in der Programmiersprache \asypmtote{} zu erleichtern, geschrieben.
+Die API-Referenz findet man aus \url{https://hpb-htw.github.io/optik-doc/}.
 
 Das Paket kann man aus der Git-Repository \url{https://github.com/hpb-htw/optik} herunterladen.
-Es ist empfohlen, das Paket entweder via Git-Klone bei einem Non-Git-Projekt oder via Git-Submodule bei einem Git-Projekt einzubinden:
+Es wird empfohlen, das Paket entweder via Git-Klone bei einem Non-Git-Projekt oder via Git-Submodule bei einem Git-Projekt einzubinden:
 
 \begin{shellcode}
 #  cd to your Project directory
@@ -17,7 +18,7 @@ git submodule add --depth 1 https://github.com/hpb-htw/optik.git
 Die Odner-Struktur des \LaTeX{} Projekt kann etwa so aussehen:
 
 \begin{verbatim}
-.
+project root
 ├── asy-img
 │   ├── Makefile                # optional
 │   ├── mirror-blank.asy        # your images

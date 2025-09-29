@@ -12,4 +12,12 @@
 \PY{+w}{ }\PY{p}{.}\PY{n}{labelMirror}\PY{p}{(}\PY{n}{surfaceL}\PY{o}{=}\PY{l+s}{\PYZdq{}\PYZbs{}tLabel\PYZob{}Grenzfläche\PYZcb{}\PYZdq{}}\PY{p}{,}\PY{+w}{ }\PY{n}{normalL}\PY{o}{=}\PY{l+s}{\PYZdq{}\PYZbs{}tLabel\PYZob{}Einfallslot\PYZcb{}\PYZdq{}}\PY{p}{)}
 \PY{+w}{ }\PY{p}{.}\PY{n}{labelRays}\PY{p}{(}\PY{n}{source}\PY{p}{,}\PY{+w}{ }\PY{n}{incident}\PY{o}{=}\PY{l+s}{\PYZdq{}\PYZdl{}\PYZbs{}alpha\PYZdl{}\PYZdq{}}\PY{p}{,}\PY{+w}{ }\PY{n}{reflected}\PY{o}{=}\PY{l+s}{\PYZdq{}\PYZdl{}\PYZbs{}alpha\PYZsq{}\PYZdl{}\PYZdq{}}\PY{p}{)}
 \PY{p}{;}
+\PY{k+kt}{Label}\PY{+w}{ }\PY{n}{einfallstrahl}\PY{+w}{ }\PY{o}{=}\PY{+w}{ }\PY{n+nf}{Label}\PY{p}{(}\PY{l+s}{\PYZdq{}\PYZbs{}tLabel\PYZob{}Einfallsstrahl\PYZcb{}\PYZdq{}}\PY{p}{,}
+\PY{+w}{                            }\PY{n+nf}{align}\PY{o}{=}\PY{n+nv}{SW}\PY{p}{,}\PY{+w}{ }\PY{k+kt}{position}\PY{o}{=}\PY{n+nf}{Relative}\PY{p}{(}\PY{l+m+mf}{0.4}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+\PY{n+nf}{label}\PY{p}{(}\PY{n}{einfallstrahl}\PY{p}{,}\PY{+w}{ }\PY{n}{source}\PY{+w}{ }\PY{o}{\PYZhy{}}\PY{o}{\PYZhy{}}\PY{+w}{ }\PY{n}{mirrorC}\PY{p}{)}\PY{p}{;}
+
+\PY{k+kt}{point}\PY{+w}{ }\PY{n}{reflected}\PY{+w}{ }\PY{o}{=}\PY{+w}{ }\PY{n}{m}\PY{p}{.}\PY{n}{reflectedPoint}\PY{p}{(}\PY{n}{source}\PY{p}{)}\PY{p}{;}
+\PY{k+kt}{Label}\PY{+w}{ }\PY{n}{reflektierterStrahl}\PY{+w}{ }\PY{o}{=}\PY{+w}{ }\PY{n+nf}{Label}\PY{p}{(}\PY{n+nf}{minipage}\PY{p}{(}\PY{l+s}{\PYZdq{}\PYZbs{}tLabel\PYZob{}reflektierter Strahl\PYZcb{}\PYZdq{}}\PY{p}{,}\PY{+w}{ }\PY{n}{width}\PY{o}{=}\PY{l+m+mi}{80}\PY{p}{)}\PY{p}{,}
+\PY{+w}{                                  }\PY{n+nf}{align}\PY{o}{=}\PY{n+nv}{SE}\PY{p}{,}\PY{+w}{ }\PY{k+kt}{position}\PY{o}{=}\PY{n+nf}{Relative}\PY{p}{(}\PY{l+m+mf}{0.65}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+\PY{n+nf}{label}\PY{p}{(}\PY{n}{reflektierterStrahl}\PY{p}{,}\PY{+w}{ }\PY{n}{mirrorC}\PY{+w}{ }\PY{o}{\PYZhy{}}\PY{o}{\PYZhy{}}\PY{+w}{ }\PY{n}{reflected}\PY{p}{)}\PY{p}{;}
 \end{Verbatim}

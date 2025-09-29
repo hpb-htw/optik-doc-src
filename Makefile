@@ -54,15 +54,15 @@ deploy:
 	make $(MANUAL)
 	# web
 	git -C $(WEB_REPO) add .
-	git -C $(WEB_REPO) commit -a -m "Autocommit"
+	git -C $(WEB_REPO) commit -a -m "Autocommit"; true
 	git -C $(WEB_REPO) push --force origin main
 	# lib
 	git -C $(LIB_REPO) add .
-	git -C $(LIB_REPO) commit -a -m "autocommit"
+	git -C $(LIB_REPO) commit -a -m "autocommit"; true
 	git -C $(LIB_REPO) push --force origin master
 	# doc
 	git add .
-	git commit -a -m "_autocommit"
+	git commit -a -m "_autocommit"; true
 	git push --force origin master
 
 

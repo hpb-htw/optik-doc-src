@@ -5,6 +5,8 @@ und der Begriff „gestalterische Merkmale“ die Merkmale der Darstellung des G
 
 \section{Ebene Spiegel}
 
+\subsection{Einfache ebene Spiegel}
+
 Die geometrische Merkmale eines ebenen Spiegel ist die Ebene, auf die ein Lichtstrahl trifft.
 Diese Ebene wird durch einen Normalvektor und einen zentralen Punkt charakterisiert.
 
@@ -55,4 +57,44 @@ Dazu dienen die Methoden \texttt{labelMirror} und \texttt{labelRays}:
 Ein Periskop kann man wie folgt erstellen:
 
 \vexample{asy-img/mirror-periscope}
+
+\subsection{Anpassbare ebene Spiegel}
+
+
+Trifft der Einfallsstrahl nicht auf dem zentralen Punkt des Spiegels, muss der Einfallspunkt und die Normallinien berechnet werden.
+Ist der Abstand zwischen dem Einfallspunkt und dem zentralen Punkt des Spiegels gegeben, kann man die Normallinien wie folgt berechnen:
+
+\begin{asycode}
+PlanaMirror m = PlanaMirror(normalDir, mirrorC);
+real incidentDistance = 5;
+NormalLine nt = m.calculateNormal(incidentDistance);
+\end{asycode}
+
+
+Das nächste Beispiel zeigt die Anwendung der Methode \texttt{calculateNormal}.
+Es zeigt auch die Anwendung der Methode \texttt{imagePoint} sowie \texttt{drawImageSegment}.
+
+\vexample{asy-img/mirror-vertical}
+
+Sind die Lichtquelle durch einem Punkt und ihre Strahlrichtung durch einen Vektor gegeben, kann man die Normallinien wie folgt berechnen:
+
+\begin{asycode}
+point source = (x, y);
+vector direction = (a, b);
+PlanaMirror m = PlanaMirror(normalDir, mirrorC);
+NormalLine nl = m.calculateNormal(source, direction);
+\end{asycode}
+
+Diese Methode ist praktisch, wenn aus einem Punkt mehrere Einfallstrahlen in mehrere Richtungen und ihre reflektierten Strahlen gezeichnet werden sollen.
+Das nächste Beispiel zeichnet die vorherige Abbildung~\ref{code:asy-img/mirror-vertical} in einem anderem Ansatz, der die Winkel der Einfallstrahlen vorgibt.
+
+
+\vexample{asy-img/mirror-vertical-angles}
+
+
+
+
+
+
+
 

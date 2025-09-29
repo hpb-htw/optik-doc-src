@@ -22,4 +22,12 @@ m.setupMirrorSize(leftWidth=25, rightWidth=20,
  .labelMirror(surfaceL="\tLabel{Grenzfläche}", normalL="\tLabel{Einfallslot}")
  .labelRays(source, incident="$\alpha$", reflected="$\alpha'$")
 ;
+Label einfallstrahl = Label("\tLabel{Einfallsstrahl}",
+                            align=SW, position=Relative(0.4));
+label(einfallstrahl, source -- mirrorC);
+
+point reflected = m.reflectedPoint(source);
+Label reflektierterStrahl = Label(minipage("\tLabel{reflektierter Strahl}", width=80),
+                                  align=SE, position=Relative(0.65));
+label(reflektierterStrahl, mirrorC -- reflected);
 // </pygmentize>
