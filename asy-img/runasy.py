@@ -47,7 +47,8 @@ if __name__ == "__main__":
     
     if is_ok != 0:
         clean_target(filename)
-    clean_up(filename)
+    clean_up(filename) 
+    if is_ok > 255: is_ok += 1 # 256 is intepreted as 0, but it is error in asymptote
     sys.exit(is_ok)
 
 
