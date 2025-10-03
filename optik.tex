@@ -1,4 +1,4 @@
-\documentclass[fontsize=10pt,DIV=15]{scrreprt}
+\documentclass[fontsize=10pt,DIV=15,oneside]{scrbook}
 
 \input{fontconfig.sty}
 
@@ -16,11 +16,20 @@
 
 \maketitle
 
+\frontmatter
+
 \tableofcontents
+
+\mainmatter
 
 \input{chap/01-start.tex}
 \input{chap/02-strahlenoptik.tex}
 
+\appendix
+
+\input{chap/A-Asymptote.tex}
+
+\backmatter
 
 \printbibliography
 \end{document}
