@@ -11,8 +11,8 @@ import "optik/optik.asy" as optik;
 // center of curvature
 // <pygmentize>
 point mVertex = (0, 0);
-vector oAxis = (-1, 0);
-real focus = 12;
+vector oAxis = (-1, 1);
+real focus = 12.5;
 
 
 ConcaveMirror m = ConcaveMirror(mVertex, oAxis, focus);
