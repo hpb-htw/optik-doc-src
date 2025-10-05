@@ -47,7 +47,7 @@ pygmentstyle.sty:
 
 html: asy-img/optik/optik.asy
 	doxygen doxygen.conf
-	rsync -a --delete --progress tmp/html/ $(WEB_REPO) --exclude .git
+	#rsync -a --delete --progress tmp/html/ $(WEB_REPO) --exclude .git
 
 deploy:
 	make html
