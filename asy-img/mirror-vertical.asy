@@ -21,7 +21,7 @@ m.setupMirrorSize(10, 12, 8, 0.125mm)
 real[] incidents = {0, -5, -8};
 
 for(real i : incidents) {
-    NormalLine nl = m.calculateNormal(i);
+    PointLine nl = m.calculateNormal(i);
     m.drawIncidentRay(source, nl, arrowPosition=0)
      .drawNormal(nl, length=12)
      .drawReflectedRay(source, nl, arrowPosition=1, reflectedRayLength)

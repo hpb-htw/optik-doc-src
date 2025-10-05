@@ -17,7 +17,7 @@ m.setupMirrorSize(leftWidth=25, rightWidth=20, normalLength=18.5, thickness=1)
  .drawMirror();
 point source = (-20, 30);
 vector direction = (1, -3);
-NormalLine nl = m.calculateNormal(source, direction);
+PointLine nl = m.calculateNormal(source, direction);
 m.drawNormal(nl, length=23.4)
  .drawIncidentRay(source, nl, arrowPosition=0.1)
  .drawReflectedRay(source, nl, arrowPosition=0.95);
