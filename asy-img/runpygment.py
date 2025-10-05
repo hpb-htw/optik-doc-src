@@ -52,7 +52,7 @@ if __name__ == "__main__":
     if len(asy_code_line) <= 0:
         print(f"{bcolors.WARNING}    No code from {filename} is extracted {bcolors.ENDC}")
         print(f"{bcolors.WARNING}    generate empty file `{tex_output_filename}' {bcolors.ENDC}")
-        print(f"{bcolors.OK_CYAN}    Use a pair of {begin_token} and {end_token} to frame the code")
+        print(f"{bcolors.OK_CYAN}    Use a pair of {begin_token} and {end_token} to frame the code{bcolors.ENDC}")
 
     pymentize_asy_code(asy_code_line, tex_output_filename)
 
